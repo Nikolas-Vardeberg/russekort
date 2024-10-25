@@ -3,14 +3,31 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: 243, 247, 239;
+  --color-primary-dark: 0, 47, 12;
+  --color-secondary-green: 84, 226, 64;
+  --color-secondary-pink: 251, 132, 253;
+  --color-secondary-red: 255, 83, 1;
+  --color-secondary-orange: 251, 174, 21;
+  --color-secondary-blue: 132, 214, 241;
+  --color-variant-light: 219, 227, 216;
+  --color-variant-dark: 73, 107, 80;
+  --color-variant-blue-light: 79, 197, 235;
+  --color-variant-blue-dark: 21, 146, 188;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  :root{
+    --color-primary: 243, 247, 239;
+    --color-primary-dark: 0, 47, 12;
+    --color-secondary-green: 84, 226, 64;
+    --color-secondary-pink: 251, 132, 253;
+    --color-secondary-red: 255, 83, 1;
+    --color-secondary-orange: 251, 174, 21;
+    --color-secondary-blue: 132, 214, 241;
+    --color-variant-light: 219, 227, 216;
+    --color-variant-dark: 73, 107, 80;
+    --color-variant-blue-light: 79, 197, 235;
+    --color-variant-blue-dark: 21, 146, 188;
   }
 }
 
