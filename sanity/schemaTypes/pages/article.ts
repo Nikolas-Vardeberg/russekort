@@ -1,6 +1,7 @@
 import { defineType } from "sanity";
 import { seo } from "../objects/seo";
 import { blocks } from "../objects/blocks";
+import { editor } from "../objects/editor";
 
 export const article = defineType({
     type: "document",
@@ -63,8 +64,13 @@ export const article = defineType({
         {
             ...blocks,
             group: "general",
+        },
+        {
+            name: "editor",
+            type: "reference",
+            to: [{ type: "editor" }],
+            group: "byline"
         }
-        //TODO: EDITOR
     ],
     orderings: [
         {
