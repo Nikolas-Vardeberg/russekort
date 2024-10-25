@@ -1,3 +1,4 @@
+import Blocks from "@/common/components/blocks/blocks";
 import { getTransportPageQuery } from "@/common/queries/pages/transport-page.queries";
 import type {TransportPage} from "@/common/types/pages/page.types";
 import { sanityFetch } from "@/sanity/lib/client";
@@ -21,6 +22,12 @@ export default async function TransportPage({ params }: Props) {
 
     return(
         <div>
+            <div>
+                <h2>{data.title}</h2>
+                <p>{data.excerpt}</p>
+            </div>
+
+            <Blocks blocks={data.blocks ?? []} />
             <pre>{JSON.stringify(data, undefined, 2)}</pre>
         </div>
     )
