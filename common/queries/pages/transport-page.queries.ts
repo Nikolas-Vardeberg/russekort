@@ -11,6 +11,7 @@ export const getTransportPageQuery = groq`*[_type == "transportPage" && slug.cur
         "url": asset->url,
     },
     "slug": slug.current,
+    excerpt,
     "blocks": blocks[]${BLOCKS_QUERY},
     seo,
 }`

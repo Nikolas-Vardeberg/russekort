@@ -46,6 +46,12 @@ export const TransportPage = defineType({
             group: "general",
         },
         {
+            name: "excerpt",
+            type: "text",
+            title: "Excerpt",
+            group: "general"
+        },
+        {
             ...blocks,
             group: "general",
         },

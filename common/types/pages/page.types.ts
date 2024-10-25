@@ -7,4 +7,5 @@ export type TransportPage = {
     title: string;
     slug: string;
     blocks?: Blocks[];
+    excerpt: string;
 }
