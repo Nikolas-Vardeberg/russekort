@@ -1,6 +1,5 @@
 import { defineType } from "sanity";
-
-
+import { seo } from "../objects/seo";
 
 export const article = defineType({
     type: "document",
@@ -55,11 +54,13 @@ export const article = defineType({
             group: "byline",
             initialValue: new Date().toISOString(),
             validation: (Rule) => Rule.required(),
+        },  
+        {
+            ...seo,
+            group: "seo",
         },
         //TODO: BLOCKS
         //TODO: EDITOR
-        //TODO: BLOCKS
-        //TODO: SEO
     ],
     orderings: [
         {
