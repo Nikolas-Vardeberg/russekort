@@ -1,9 +1,6 @@
 import { groq } from "next-sanity";
 import { BLOCKS_QUERY } from "../blocks/index.queries";
 
-
-
-
 export const getTransportPageQuery = groq`*[_type == "transportPage" && slug.current == $slug][0]{
     _id,
     title,
@@ -14,4 +11,4 @@ export const getTransportPageQuery = groq`*[_type == "transportPage" && slug.cur
     excerpt,
     "blocks": blocks[]${BLOCKS_QUERY},
     seo,
-}`
+}`;
