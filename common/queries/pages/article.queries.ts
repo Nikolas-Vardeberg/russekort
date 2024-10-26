@@ -6,18 +6,28 @@ import { EDITOR_QUERY } from "../editor.queries";
 export const ARTICLE_QUERY = groq`*[_type == "article" && slug.current == $slug][0]{
     _id,
     title,
-    mainImage -> {
-        "url": assets->url,
-        alt,
+    mainImage {
+        "url": asset -> url,
     },
     publishedAt,
     tags[]->{
         "slug": slug.current,
         title,
-    }
-    "slug": current.slug,
+    },
+    "slug": slug.current,
     "blocks": blocks[]${BLOCKS_QUERY},
     "editor": editor->${EDITOR_QUERY},
-    //TODO: RELATED
+    "related": *[_type == "article" && (!defined($slug) || slug.current != $slug) && count((tags[]._ref)[@ in ^.tags[]._ref]) > 0]{
+            _id,
+            _type,
+            "slug": slug.current,
+            title,
+            tags[]->{
+                _id,
+                title,
+                "slug": slug.current,
+            },
+            "tagCount": count((tags[]._ref)[@ in ^.tags[]._ref]),
+        }| order(tagCount desc, _createdAt desc) [0...3],
     seo,
 }`

@@ -1,6 +1,5 @@
 import { ConfigContext } from "sanity";
 import { StructureBuilder } from "sanity/structure";
-import article from "./schemaTypes/pages/article";
 import { SettingsIcon } from "lucide-react";
 
 // https://www.sanity.io/docs/structure-builder-cheat-sheet

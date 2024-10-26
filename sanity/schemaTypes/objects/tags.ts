@@ -9,8 +9,8 @@ export const tags = defineField({
     icon: Tags,
     fields: [
         {
-            name: "name",
-            title: "Navn",
+            name: "title",
+            title: "Title",
             type: "string",
         },
         {

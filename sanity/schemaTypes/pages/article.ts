@@ -53,8 +53,8 @@ export const article = defineType({
         },
         {
             name: "tags",
-            type: "reference",
-            to: [{ type: "tags"}],
+            type: "array",
+            of: [{ type: "reference", to: [{type: "tags"}]}],
             group: "byline",
         },
         {
