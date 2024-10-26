@@ -3,11 +3,13 @@ import { seo } from "../objects/seo";
 import { blocks } from "../objects/blocks";
 import { editor } from "../objects/editor";
 import { tags } from "../objects/tags";
+import { Newspaper } from "lucide-react";
 
 export const article = defineType({
     type: "document",
     name: "article",
     title: "Article",
+    icon: Newspaper,
     groups: [
         {
             name: "general",

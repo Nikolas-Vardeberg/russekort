@@ -1,6 +1,7 @@
 import { defineType } from "sanity";
 import { seo } from "../objects/seo";
 import { blocks } from "../objects/blocks";
+import { Folder } from "lucide-react";
 
 
 
@@ -8,6 +9,7 @@ export const TransportPage = defineType({
     name: "transportPage",
     type: "document",
     title: "Transport Sider",
+    icon: Folder,
     groups: [
         {
             name: "general",

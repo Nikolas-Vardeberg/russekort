@@ -11,10 +11,13 @@ export const ARTICLE_QUERY = groq`*[_type == "article" && slug.current == $slug]
         alt,
     },
     publishedAt,
+    tags[]->{
+        "slug": slug.current,
+        title,
+    }
     "slug": current.slug,
     "blocks": blocks[]${BLOCKS_QUERY},
     "editor": editor->${EDITOR_QUERY},
     //TODO: RELATED
-    //TODO: TAGS
     seo,
 }`

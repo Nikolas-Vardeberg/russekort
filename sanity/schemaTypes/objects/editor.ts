@@ -1,3 +1,4 @@
+import { UserRound } from "lucide-react";
 import { defineField } from "sanity";
 
 
@@ -5,6 +6,7 @@ export const editor = defineField({
     name: "editor",
     title: "Agenter",
     type: "document",
+    icon: UserRound,
     fields: [
         {
             name: "name",
