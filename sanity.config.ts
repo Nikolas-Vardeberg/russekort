@@ -13,6 +13,7 @@ import {apiVersion, dataset, projectId} from './sanity/env'
 import {schema} from './sanity/schemaTypes'
 import {structure} from './sanity/structure'
 import { seoMetaFields } from 'sanity-plugin-seo'
+import { media } from 'sanity-plugin-media'
 
 export default defineConfig({
   basePath: '/studio',
@@ -23,6 +24,7 @@ export default defineConfig({
   plugins: [
     structureTool({structure}),
     seoMetaFields(),
+    media(),
     // Vision is for querying with GROQ from inside the Studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),
