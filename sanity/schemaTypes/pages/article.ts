@@ -2,6 +2,7 @@ import { defineType } from "sanity";
 import { seo } from "../objects/seo";
 import { blocks } from "../objects/blocks";
 import { editor } from "../objects/editor";
+import { tags } from "../objects/tags";
 
 export const article = defineType({
     type: "document",
@@ -47,6 +48,12 @@ export const article = defineType({
                 source: 'title',
             },
             group: "general",
+        },
+        {
+            name: "tags",
+            type: "reference",
+            to: [{ type: "tags"}],
+            group: "byline",
         },
         {
             name: "publishedAt",
