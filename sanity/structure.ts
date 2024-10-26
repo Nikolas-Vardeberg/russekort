@@ -1,6 +1,6 @@
 import { ConfigContext } from "sanity";
 import { StructureBuilder } from "sanity/structure";
-import { SettingsIcon } from "lucide-react";
+import { GalleryVerticalEnd, Globe, SettingsIcon } from "lucide-react";
 
 // https://www.sanity.io/docs/structure-builder-cheat-sheet
 export const structure = (S: StructureBuilder, C: ConfigContext) =>
@@ -10,8 +10,9 @@ export const structure = (S: StructureBuilder, C: ConfigContext) =>
       S.documentTypeListItem('article').title('Article'),
       S.documentTypeListItem("editor").title("Agenter"),
       S.documentTypeListItem("transportPage").title("Transport Page"),
-      S.documentTypeListItem("tags").title("Tags"),
-      
+      S.listItem()
+        .title("Sider")
+        .icon(Globe),
       S.listItem()
         .title("Generelle instillinger")
         .icon(SettingsIcon)
