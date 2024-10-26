@@ -16,7 +16,7 @@ export type ArticlePage = {
     _id: string;
     title: string;
     slug: string;
-    block?: Blocks[];
+    blocks?: Blocks[];
     mainImage: any;
     editor: Editor;
     tags: any;
