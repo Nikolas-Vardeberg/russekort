@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import ReactQueryProvider from "@/common/providers/ReactQueryProvider";
+import { SanityLive } from "@/sanity/lib/live";
+import { draftMode } from "next/headers";
+import { DisableDraftMode } from "@/common/components/sanity/DisableDraftMode";
+import { VisualEditing } from "next-sanity";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,6 +35,13 @@ export default async function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           {children}
+          <SanityLive />
+          {(await draftMode()).isEnabled && (
+            <>
+              <DisableDraftMode />
+              <VisualEditing />
+            </>
+          )}
         </body>
       </html>
     </ReactQueryProvider>
